@@ -20,14 +20,28 @@ const Hero = () => {
     slidesToShow: 1, // Number of slides visible
     slidesToScroll: 1, // Number of slides to scroll
     autoplay: true, // Enable autoplay
-    autoplaySpeed: 2000, // Speed in milliseconds (2 seconds)
+    autoplaySpeed: 1500, // Speed in milliseconds (2 seconds)
+    appendDots: dots => (
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '10px',
+          width: '100%',
+          textAlign: 'center',
+        }}
+      >
+        <ul style={{ margin: '0', padding: '0', display: 'inline-block' }}>
+          {dots}
+        </ul>
+      </div>
+    ),
   };
 
   return (
-    <div className="w-full overflow-hidden relative ">
+    <div className="w-full overflow-hidden relative">
       <Slider {...settings}>
         {images.map((image) => (
-          <div key={image.id} className="">
+          <div key={image.id}>
             <img
               src={image.src}
               alt={image.alt}
