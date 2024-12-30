@@ -2,6 +2,7 @@ import React from "react";
 import BiryaniItem from "./BiryaniItem";
 
 const BiryaniData = () => {
+
   const biryaniData = [
     {
       title: "Chicken Hyderabadi Dum Biryani [1/2 kg]",
@@ -13,7 +14,7 @@ const BiryaniData = () => {
       bestseller: true,
       orders: "15439",
       discountCode: "BBK120",
-      img:"./Images/19.PNG",
+      imgUrl:"./Images/19.PNG",
     },
     {
       title: "Chicken Hyderabadi Dum Biryani [750g]",
@@ -25,7 +26,7 @@ const BiryaniData = () => {
       bestseller: false,
       orders: "11211",
       discountCode: "BBK120",
-      img:"./Images/20.JPEG",
+      imgUrl:"./Images/20.JPEG",
     },
         {
           title: "Chicken Hyderabadi Dum Biryani [1/2 kg]",
@@ -36,7 +37,7 @@ const BiryaniData = () => {
           bestseller: true,
           orders: "15439",
           discountCode: "BBK120",
-          img:"./Images/21.WEBP",
+          imgUrl:"./Images/21.WEBP",
 
         },
         {
@@ -48,7 +49,7 @@ const BiryaniData = () => {
           bestseller: false,
           orders: "11211",
           discountCode: "BBK120",
-          img:"./Images/23.AVIF",
+          imgUrl:"./Images/23.AVIF",
 
         },
         {
@@ -60,7 +61,7 @@ const BiryaniData = () => {
           bestseller: true,
           orders: "7671",
           discountCode: "BBK120",
-          img:"./Images/18.JPEG",
+          imgUrl:"./Images/18.JPEG",
 
         },
         {
@@ -72,7 +73,7 @@ const BiryaniData = () => {
           bestseller: false,
           orders: "8350",
           discountCode: "BBK120",
-          img:"./Images/17.JPEG",
+          imgUrl:"./Images/17.JPEG",
 
         },
         {
@@ -84,7 +85,7 @@ const BiryaniData = () => {
           bestseller: true,
           orders: "11295",
           discountCode: "BBK120",
-          img:"./Images/16.JPEG",
+          imgUrl:"./Images/16.JPEG",
 
         },
         {
@@ -96,7 +97,7 @@ const BiryaniData = () => {
           bestseller: false,
           orders: "7421",
           discountCode: "BBK120",
-          img:"./Images/20.JPEG",
+          imgUrl:"./Images/20.JPEG",
         },
         {
           title: "Vegetable Hyderabadi Dum Biryani [1/2 kg]",
@@ -107,7 +108,7 @@ const BiryaniData = () => {
           bestseller: true,
           orders: "9603",
           discountCode: "BBK120",
-          img:"./Images/21.WEBP",
+          imgUrl:"./Images/21.WEBP",
 
         },
         {
@@ -119,7 +120,7 @@ const BiryaniData = () => {
           bestseller: true,
           orders: "6322",
           discountCode: "BBK120",
-          img:"./Images/19.PNG",
+          imgUrl:"./Images/19.PNG",
         },
         {
           title: "Vegetable Hyderabadi Dum Biryani [1kg]",
@@ -130,7 +131,7 @@ const BiryaniData = () => {
           bestseller: false,
           orders: "5431",
           discountCode: "BBK120",
-          img:"./Images/20.JPEG",
+          imgUrl:"./Images/20.JPEG",
         },
         {
           title: "Special Paneer Hyderabadi Dum Biryani [1/2 kg]",
@@ -141,7 +142,7 @@ const BiryaniData = () => {
           bestseller: true,
           orders: "8547",
           discountCode: "BBK120",
-          img:"./Images/22.JPEG",
+          imgUrl:"./Images/22.JPEG",
         },
         {
           title: "Special Paneer Hyderabadi Dum Biryani [750g]",
@@ -152,7 +153,7 @@ const BiryaniData = () => {
           bestseller: false,
           orders: "3987",
           discountCode: "BBK120",
-          img:"./Images/18.JPEG",
+          imgUrl:"./Images/18.JPEG",
         },
         {
           title: "Special Paneer Hyderabadi Dum Biryani [1kg]",
@@ -163,7 +164,7 @@ const BiryaniData = () => {
           bestseller: true,
           orders: "5264",
           discountCode: "BBK120",
-          img:"./Images/17.JPEG",
+          imgUrl:"./Images/17.JPEG",
         },
         {
           title: "Chicken Kacchi Biryani [1/2 kg]",
@@ -174,7 +175,7 @@ const BiryaniData = () => {
           bestseller: true,
           orders: "14753",
           discountCode: "BBK120",
-          img:"./Images/18.JPEG",
+          imgUrl:"./Images/18.JPEG",
         },
         {
           title: "Chicken Kacchi Biryani [750g]",
@@ -185,7 +186,7 @@ const BiryaniData = () => {
           bestseller: false,
           orders: "8712",
           discountCode: "BBK120",
-          img:"./Images/16.JPEG",
+          imgUrl:"./Images/16.JPEG",
         },
         {
           title: "Chicken Kacchi Biryani [1kg]",
@@ -196,7 +197,7 @@ const BiryaniData = () => {
           bestseller: true,
           orders: "10293",
           discountCode: "BBK120",
-          img:"./Images/20.JPEG",
+          imgUrl:"./Images/20.JPEG",
         },
         {
           title: "Mutton Kacchi Biryani [1/2 kg]",
@@ -207,7 +208,7 @@ const BiryaniData = () => {
           bestseller: true,
           orders: "8956",
           discountCode: "BBK120",
-          img:"./Images/20.JPEG"
+          imgUrl:"./Images/20.JPEG"
         },
         {
           title: "Mutton Kacchi Biryani [750g]",
@@ -218,7 +219,7 @@ const BiryaniData = () => {
           bestseller: false,
           orders: "6353",
           discountCode: "BBK120",
-          img:"./Images/20.JPEG"
+          imgUrl:"./Images/20.JPEG"
         },
         {
           title: "Mutton Kacchi Biryani [1kg]",
@@ -229,7 +230,7 @@ const BiryaniData = () => {
           bestseller: true,
           orders: "9231",
           discountCode: "BBK120",
-          img:"./Images/20.JPEG"
+          imgUrl:"./Images/20.JPEG"
         },
         {
           title: "Vegetable Kacchi Biryani [1/2 kg]",
@@ -240,7 +241,7 @@ const BiryaniData = () => {
           bestseller: false,
           orders: "5347",
           discountCode: "BBK120",
-          img:"./Images/20.JPEG"
+          imgUrl:"./Images/20.JPEG"
         },
         {
           title: "Vegetable Kacchi Biryani [750g]",
@@ -251,7 +252,7 @@ const BiryaniData = () => {
           bestseller: true,
           orders: "3615",
           discountCode: "BBK120",
-          img:"./Images/20.JPEG"
+          imgUrl:"./Images/20.JPEG"
         },
         {
           title: "Vegetable Kacchi Biryani [1kg]",
@@ -262,7 +263,7 @@ const BiryaniData = () => {
           bestseller: true,
           orders: "4829",
           discountCode: "BBK120",
-          img:"./Images/20.JPEG"
+          imgUrl:"./Images/20.JPEG"
         },
         {
           title: "Special Veg Biryani [1/2 kg]",
@@ -273,7 +274,7 @@ const BiryaniData = () => {
           bestseller: false,
           orders: "2631",
           discountCode: "BBK120",
-          img:"./Images/20.JPEG"
+          imgUrl:"./Images/20.JPEG"
         },
         {
           title: "Special Veg Biryani [750g]",
@@ -284,7 +285,7 @@ const BiryaniData = () => {
           bestseller: true,
           orders: "4853",
           discountCode: "BBK120",
-          img:"./Images/20.JPEG"
+          imgUrl:"./Images/20.JPEG"
         },
         {
           title: "Special Veg Biryani [1kg]",
@@ -295,7 +296,7 @@ const BiryaniData = () => {
           bestseller: false,
           orders: "3651",
           discountCode: "BBK120",
-          img:"./Images/20.JPEG"
+          imgUrl:"/Images/20.JPEG"
         }
       ];
 

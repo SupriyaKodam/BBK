@@ -1,5 +1,5 @@
-import React from "react";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart"; // MUI Icon
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Importing navigate from react-router-dom
 
 const coolDrinksData = [
   {
@@ -22,7 +22,7 @@ const coolDrinksData = [
     orders: "214 People ordered last week",
     badge: "Popular",
     badgeColor: "bg-blue-500",
-    imageUrl:"./Images/u.JPEG",
+    imageUrl: "./Images/u.JPEG",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const coolDrinksData = [
     orders: "275 People ordered last week",
     badge: "Popular",
     badgeColor: "bg-blue-500",
-    imageUrl:"./Images/p.JPEG",
+    imageUrl: "./Images/p.JPEG",
   },
   {
     id: 4,
@@ -66,11 +66,19 @@ const coolDrinksData = [
     orders: "492 People ordered last week",
     badge: "Popular",
     badgeColor: "bg-blue-500",
-    imageUrl:"./Images/y.JPEG",
+    imageUrl: "./Images/y.JPEG",
   },
 ];
 
 const CoolDrinks = () => {
+  const [cartItems, setCartItems] = useState([]); // State to store cart items
+  const navigate = useNavigate();
+
+  const handleAddToCart = (item) => {
+    setCartItems((prevItems) => [...prevItems, item]);
+    navigate("/details", { state: item }); // Navigate to details page and pass selected item
+  };
+
   return (
     <div className="p-6 bg-gray-100">
       <h1 className="text-3xl font-bold p-3 mb-3">Cool Drinks</h1>
@@ -99,9 +107,12 @@ const CoolDrinks = () => {
                 <p className="text-xl font-semibold text-yellow-600">{item.discountedPrice}</p>
                 <p className="text-gray-700 my-2">{item.description}</p>
                 <p className="text-sm text-gray-500">{item.orders}</p>
-                {/* MUI Icon */}
+                {/* Add to Cart Button */}
                 <div className="mt-4 flex justify-center items-center cursor-pointer">
-                  <button className="text-white text-xl font-bold p-3 w-full bg-orange-300">
+                  <button
+                    onClick={() => handleAddToCart(item)} // Add item to cart
+                    className="text-white text-xl font-bold p-3 w-full bg-yellow-500 rounded-lg"
+                  >
                     ADD TO CART
                   </button>
                 </div>

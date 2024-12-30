@@ -1,6 +1,6 @@
-import React from "react";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart"; // MUI Icon
 
+import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 const dessertData = [
   {
     id: 1,
@@ -70,7 +70,14 @@ const dessertData = [
   },
 ];
 
+
 const Desserts = () => {
+  const navigate = useNavigate(); // Initialize useNavigate for navigation
+
+  const handleAddToCart = (item) => {
+    navigate("/details", { state: item }); // Navigate to details page with the dessert data as state
+  };
+
   return (
     <div className="p-6 bg-gray-100">
       <h1 className="text-3xl font-bold p-3 mb-3">Desserts</h1>
@@ -101,7 +108,10 @@ const Desserts = () => {
                 <p className="text-sm text-gray-500">{item.orders}</p>
                 {/* MUI Icon */}
                 <div className="mt-4 flex justify-center items-center cursor-pointer">
-                  <button className="text-white text-xl font-bold p-3 w-full bg-orange-300">
+                  <button
+                    className="text-white text-xl font-bold p-3 w-full bg-yellow-500 rounded-lg"
+                    onClick={() => handleAddToCart(item)} // Trigger navigation on click
+                  >
                     ADD TO CART
                   </button>
                 </div>

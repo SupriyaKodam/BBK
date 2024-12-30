@@ -9,8 +9,10 @@ import DiningIcon from '@mui/icons-material/Dining';
 import DinnerDiningIcon from '@mui/icons-material/DinnerDining';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import {useNavigate} from 'react-router-dom'
 
 const Navbar = () => {
+  const navigate=useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -41,20 +43,21 @@ const Navbar = () => {
           </button>
           <button className="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
             <DiningIcon className="text-xl" />
-            <span className='text-xl font-semibold'>Outlets</span>
+            <span className='text-xl font-semibold' onClick={()=>navigate('/store')}>Outlets</span>
           </button>
           <button className="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
             <RestaurantMenuIcon className="text-xl" />
-            <span className='text-xl font-semibold'>Menu</span>
+            <span className='text-xl font-semibold'onClick={()=>navigate('/menu')}>Menu</span>
           </button>
           <button className="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
             <DinnerDiningIcon className="text-xl" />
-            <span className='text-xl font-semibold'>Bulk Order</span>
+            <span className='text-xl font-semibold' onClick={()=>navigate('bulk')}>Bulk Order</span>
           </button>
           <button className="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
             <TableRestaurantIcon className="text-xl" />
-            <span className='text-xl font-semibold'>Book a Table</span>
+            <span className='text-xl font-semibold' onClick={()=>navigate('/bookatable')}>Book a Table</span>
           </button>
+          <button className='flex items-center space-x-2 text-gray-700' onClick={()=>navigate('/login')}>Login/Signup</button>
         </div>
       )}
 
@@ -84,26 +87,26 @@ const Navbar = () => {
           </button>
           <button className="flex items-center space-x-1 text-gray-700 hover:text-blue-600">
             <DiningIcon className="text-xl" />
-            <span className='text-xl font-semibold'>Outlets</span>
+            <span className='text-xl font-semibold' onClick={()=>navigate('/store')}>Outlets</span>
           </button>
           <button className="flex items-center space-x-1 text-gray-700 hover:text-blue-600">
             <RestaurantMenuIcon className="text-xl" />
-            <span className='text-xl font-semibold'>Menu</span>
+            <span className='text-xl font-semibold' onClick={()=>navigate('/menu')}>Menu</span>
           </button>
           <button className="flex items-center space-x-1 text-gray-700 hover:text-blue-600">
             <DinnerDiningIcon className="text-xl" />
-            <span className='text-xl font-semibold'>Bulk Order</span>
+            <span className='text-xl font-semibold' onClick={()=>navigate('bulk')}>Bulk Order</span>
           </button>
           <button className="flex items-center space-x-1 text-gray-700 hover:text-blue-600">
             <TableRestaurantIcon className="text-xl" />
-            <span className='text-xl font-semibold'>Book a Table</span>
+            <span className='text-xl font-semibold' onClick={()=>navigate('/bookatable')}>Book a Table</span>
           </button>
         </div>
 
         {/* User Actions */}
         <div className="flex items-center space-x-4">
           <img src="./Images/image.WEBP" className="w-8 h-6" alt="User Icon" />
-          <button className="text-gray-700 hover:text-blue-600 p-3 border-2 border-black rounded-full">Login</button>
+          <button className="text-gray-700 hover:text-blue-600 p-3 border-2 border-black rounded-full" onClick={()=>navigate('/login')}>Login</button>
         </div>
       </div>
     </div>
