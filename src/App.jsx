@@ -9,21 +9,24 @@ import Details from './Components/Details';
 import De from './Components/DetailsPage';
 import BulkOrderPage from './Components/Bulkorder';
 import StoreList from './Components/StoreList';
+import Checkout from './Components/Checkout';
 import LoginSignup from './Components/Login';
+
 
 const App = () => {
   return (
     <Router>
       <Snowfall />
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Landingpage />} />
-        <Route path='/bookatable' element={<Bookatable/>}/>
-        <Route path='/menu' element={<Menu/>}/>
-        <Route path='/details' element={<Details/>}/>
-        <Route path='/go' element={<De/>}/>
-        <Route path='/bulk' element={<BulkOrderPage/>}/>
-        <Route path='/store' element={<StoreList/>}/>
+        <Route path="/bookatable" element={<Bookatable />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/details" element={<Details />} />
+        <Route path="/go" element={<De />} /> {/* Corrected route for De */}
+        <Route path="/bulk" element={<BulkOrderPage />} />
+        <Route path="/store" element={<StoreList />} />
+        <Route path="/checkout" element={<Checkout />} /> {/* Corrected route for Checkout */}
         <Route path='/login' element={<LoginSignup/>}/>
       </Routes>
     </Router>
