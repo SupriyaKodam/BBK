@@ -1,138 +1,153 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from React Router
-
+import { addToCart } from '../features/cartSlice';
+import { useDispatch } from "react-redux";
 
 const FoodGrid = () => {
+  const dispatch = useDispatch();
+  
   const foodData = [
     // Biryani items
     {
-      id: 1,
+      id: 33,
       name: "BOGO 2 x Veg Biryanis",
       originalPrice: "₹798",
-      discountedPrice: "₹529",
+      price: "529",
       description: "Mix and match any two veg dum biryanis of your choice.",
       orders: "749 People order in last week",
       badge: "Bestseller",
       badgeColor: "bg-green-500",
-      imageUrl: "./Images/b.JPEG", // Image URL for Veg Biryani
+      imgUrl: "./Images/b.JPEG", // Image URL for Veg Biryani
+      qnty:1
     },
     {
-      id: 2,
+      id: 34,
       name: "BOGO 2 x Non Veg Biryanis",
       originalPrice: "₹998",
-      discountedPrice: "₹589",
+      price: "589",
       description: "Mix and match any two chicken dum biryanis of your choice.",
       orders: "957 People order in last week",
       badge: "Bestseller",
       badgeColor: "bg-green-500",
-      imageUrl: "./Images/c.JPEG", // Image URL for Non-Veg Biryani
+      imgUrl: "./Images/c.JPEG", // Image URL for Non-Veg Biryani
+      qnty:1
     },
     {
-      id: 3,
+      id: 35,
       name: "BOGO 2 x Biryanis (Veg/Non-Veg)",
       originalPrice: "₹898",
-      discountedPrice: "₹559",
+      price: "559",
       description: "Mix and match any one veg and one non-veg biryani of your choice.",
       orders: "611 People order in last week",
       badge: "Limited Edition", // Badge added for the 3rd item
       badgeColor: "bg-yellow-500",
-      imageUrl: "./Images/d.JPEG", // Image URL for Veg/Non-Veg Biryani
+      imgUrl: "./Images/d.JPEG", // Image URL for Veg/Non-Veg Biryani
+      qnty:1
     },
     {
-      id: 4,
+      id: 36,
       name: "BOGO 2 x Paneer Biryanis",
       originalPrice: "₹898",
-      discountedPrice: "₹599",
+      price: "599",
       description: "Mix and match any two paneer dum biryanis of your choice.",
       orders: "523 People order in last week",
       badge: "Popular",
       badgeColor: "bg-blue-500",
-      imageUrl: "./Images/e.JPEG", // Image URL for Paneer Biryani
+      imgUrl: "./Images/e.JPEG", // Image URL for Paneer Biryani
+      qnty:1
     },
     {
-      id: 5,
+      id: 37,
       name: "BOGO 2 x Mutton Biryanis",
       originalPrice: "₹1198",
-      discountedPrice: "₹899",
+      price: "899",
       description: "Mix and match any two mutton dum biryanis of your choice.",
       orders: "429 People order in last week",
       badge: "Limited Offer",
       badgeColor: "bg-red-500",
-      imageUrl: "./Images/f.JPEG", // Image URL for Mutton Biryani
+      imgUrl: "./Images/f.JPEG", // Image URL for Mutton Biryani
+      qnty:1
     },
   
     // Adding Bread and Extras items
     {
-      id: 6,
+      id: 38,
       name: "Rulamakoti",
       originalPrice: "₹299",
-      discountedPrice: "₹199",
+      price: "199",
       description: "Delicious traditional bread served with biryani.",
       orders: "323 People order in last week",
       badge: "Popular",
       badgeColor: "bg-blue-500",
-      imageUrl: "./Images/g.JPEG", // Image URL for Rulamakoti
+      imgUrl: "./Images/g.JPEG", // Image URL for Rulamakoti
+      qnty:1
     },
     {
-      id: 7,
+      id: 39,
       name: "Raita",
       originalPrice: "₹129",
-      discountedPrice: "₹99",
+      price: "99",
       description: "Refreshing yogurt-based side dish.",
       orders: "520 People order in last week",
       badge: "Popular",
       badgeColor: "bg-blue-500",
-      imageUrl: "./Images/h.JPEG", // Image URL for Raita
+      imgUrl: "./Images/h.JPEG", // Image URL for Raita
+      qnty:1
     },
     {
-      id: 8,
+      id: 40,
       name: "Tandoori Naan",
       originalPrice: "₹150",
-      discountedPrice: "₹120",
+      price: "120",
       description: "Soft and fluffy naan bread baked in a tandoor.",
       orders: "412 People order in last week",
       badge: "Popular",
       badgeColor: "bg-blue-500",
-      imageUrl: "./Images/b.JPEG", // Image URL for Tandoori Naan
+      imgUrl: "./Images/b.JPEG", // Image URL for Tandoori Naan
+      qnty:1
     },
     {
-      id: 9,
+      id: 41,
       name: "Garlic Naan",
       originalPrice: "₹180",
-      discountedPrice: "₹150",
+      price: "150",
       description: "Garlic-infused naan bread, perfect with biryani.",
       orders: "358 People order in last week",
       badge: "Popular",
       badgeColor: "bg-blue-500",
-      imageUrl: "./Images/c.JPEG", // Image URL for Garlic Naan
+      imgUrl: "./Images/c.JPEG", // Image URL for Garlic Naan
+      qnty:1
     },
     {
-      id: 10,
+      id: 42,
       name: "Mango Lassi",
       originalPrice: "₹120",
-      discountedPrice: "₹90",
+      price: "90",
       description: "Creamy mango yogurt drink, a perfect match with biryani.",
       orders: "312 People order in last week",
       badge: "Popular",
       badgeColor: "bg-blue-500",
-      imageUrl: "./Images/d.JPEG", // Image URL for Mango Lassi
+      imgUrl: "./Images/d.JPEG", // Image URL for Mango Lassi
+      qnty:1
     },
     {
-      id: 11,
+      id: 43,
       name: "Masala Papad",
       originalPrice: "₹75",
-      discountedPrice: "₹55",
+      price: "55",
       description: "Crispy papad with a spicy seasoning.",
       orders: "246 People order in last week",
       badge: "Popular",
       badgeColor: "bg-blue-500",
-      imageUrl: "./Images/e.JPEG", // Image URL for Masala Papad
+      imgUrl: "./Images/e.JPEG", // Image URL for Masala Papad
+      qnty:1
     },
   ];
   
   const navigate = useNavigate(); // Hook to navigate to another page
 
   const handleAddToCart = (item) => {
+    dispatch(addToCart(item));
     // Navigate to the details page and pass the item data via state
     navigate('/details', { state: item });
   };
@@ -154,7 +169,7 @@ const FoodGrid = () => {
               )}
               {/* Image */}
               <img
-                src={item.imageUrl}
+                src={item.imgUrl}
                 alt={item.name}
                 className="h-60 w-full object-cover"
               />
@@ -162,7 +177,7 @@ const FoodGrid = () => {
               <div className="p-4">
                 <h3 className="text-lg font-bold">{item.name}</h3>
                 <p className="text-gray-500 line-through">{item.originalPrice}</p>
-                <p className="text-xl font-semibold text-yellow-600">{item.discountedPrice}</p>
+                <p className="text-xl font-semibold text-yellow-600">{item.price}</p>
                 <p className="text-gray-700 my-2">{item.description}</p>
                 <p className="text-sm text-gray-500">{item.orders}</p>
                 {/* Add to Cart Button */}

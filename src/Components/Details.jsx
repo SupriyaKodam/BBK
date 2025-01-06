@@ -7,7 +7,7 @@ import FoodGrid from "./Breadsandextra";
 const Details = () => {
   const navigate = useNavigate(); // useNavigate hook
   const location = useLocation(); // Get the location state, which contains the item data
-  const { discountedPrice } = location.state || {}; // Only get price from location state
+  const { price } = location.state || {}; // Only get price from location state
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -27,7 +27,7 @@ const Details = () => {
   const handleBuyNow = () => {
     navigate("/checkout", {
       state: {
-        price: discountedPrice, // Only pass the price
+        price: price, // Only pass the price
       },
     });
   };
@@ -39,7 +39,7 @@ const Details = () => {
           {/* Left Section: Image */}
           <div className="w-full lg:w-1/2 flex justify-center">
             <img
-              src={location.state.imageUrl} // Accessing imageUrl from the state
+              src={location.state.imgUrl} // Accessing imageUrl from the state
               alt={location.state.name} // Accessing name from the state
               className="rounded-lg shadow-lg max-w-full lg:max-w-md object-cover"
             />
@@ -51,7 +51,7 @@ const Details = () => {
             <p className="text-lg text-yellow-300">{location.state.description}</p>
             <div className="flex flex-col gap-2">
               <p className="text-xl font-semibold text-yellow-300">
-                <span className="text-yellow-300">Price:</span> ₹{discountedPrice}
+                <span className="text-yellow-300">Price:</span> ₹{price}
               </p>
             </div>
 

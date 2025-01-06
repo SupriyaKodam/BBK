@@ -1,69 +1,79 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Import the useNavigate hook
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart"; // MUI Icon
+import { addToCart } from '../features/cartSlice';
+import { useDispatch } from "react-redux";
+
 
 const biryaniData = [
   {
-    id: 1,
+    id: 44,
     name: "BOGO 2 x Veg Biryanis",
     originalPrice: "₹798",
-    discountedPrice: "₹529",
+    price: "529",
     description: "Mix and match any two veg dum biryanis of your choice.",
     orders: "749 People order in last week",
     badge: "Bestseller",
     badgeColor: "bg-green-500",
-    imageUrl: "./Images/19.PNG", // Image URL for Veg Biryani
+    imgUrl: "./Images/19.PNG", // Image URL for Veg Biryani
+    qnty:1
   },
   {
-    id: 2,
+    id: 45,
     name: "BOGO 2 x Non Veg Biryanis",
     originalPrice: "₹998",
-    discountedPrice: "₹589",
+    price: "589",
     description: "Mix and match any two chicken dum biryanis of your choice.",
     orders: "957 People order in last week",
     badge: "Bestseller",
     badgeColor: "bg-green-500",
-    imageUrl: "./Images/18.JPEG", // Image URL for Non-Veg Biryani
+    imgUrl: "./Images/18.JPEG", // Image URL for Non-Veg Biryani
+    qnty:1
   },
   {
-    id: 3,
+    id: 46,
     name: "BOGO 2 x Biryanis (Veg/Non-Veg)",
     originalPrice: "₹898",
-    discountedPrice: "₹559",
+    price: "559",
     description: "Mix and match any one veg and one non-veg biryani of your choice.",
     orders: "611 People order in last week",
     badge: "Limited Edition", // Badge added for the 3rd item
     badgeColor: "bg-yellow-500",
-    imageUrl: "./Images/20.JPEG", // Image URL for Veg/Non-Veg Biryani
+    imgUrl: "./Images/20.JPEG", // Image URL for Veg/Non-Veg Biryani
+    qnty:1
   },
   {
-    id: 4,
+    id: 47,
     name: "BOGO 2 x Paneer Biryanis",
     originalPrice: "₹898",
-    discountedPrice: "₹599",
+    price: "599",
     description: "Mix and match any two paneer dum biryanis of your choice.",
     orders: "523 People order in last week",
     badge: "Popular",
     badgeColor: "bg-blue-500",
-    imageUrl: "./Images/21.WEBP", // Image URL for Paneer Biryani
+    imgUrl: "./Images/21.WEBP", // Image URL for Paneer Biryani
+    qnty:1
   },
   {
-    id: 5,
+    id: 48,
     name: "BOGO 2 x Mutton Biryanis",
     originalPrice: "₹1198",
-    discountedPrice: "₹899",
+    price: "899",
     description: "Mix and match any two mutton dum biryanis of your choice.",
     orders: "429 People order in last week",
     badge: "Limited Offer",
     badgeColor: "bg-red-500",
-    imageUrl: "./Images/22.JPEG", // Image URL for Mutton Biryani
+    imgUrl: "./Images/22.JPEG", // Image URL for Mutton Biryani
+    qnty:1
   },
 ];
 
 const BiryaniGrid = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate(); // Initialize useNavigate
 
   const handleAddToCart = (item) => {
+      dispatch(addToCart(item));
     navigate("/details", { state: item }); // Navigate to details page with the dessert data as state
   };
 
@@ -85,7 +95,7 @@ const BiryaniGrid = () => {
               )}
               {/* Image */}
               <img
-                src={item.imageUrl}
+                src={item.imgUrl}
                 alt={item.name}
                 className="h-60 w-full object-cover"
               />
@@ -93,7 +103,7 @@ const BiryaniGrid = () => {
               <div className="p-4">
                 <h3 className="text-lg font-bold">{item.name}</h3>
                 <p className="text-gray-500 line-through">{item.originalPrice}</p>
-                <p className="text-xl font-semibold text-yellow-600">{item.discountedPrice}</p>
+                <p className="text-xl font-semibold text-yellow-600">{item.price}</p>
                 <p className="text-gray-700 my-2">{item.description}</p>
                 <p className="text-sm text-gray-500">{item.orders}</p>
                 {/* MUI Icon */}

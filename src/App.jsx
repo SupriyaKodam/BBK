@@ -11,6 +11,7 @@ import BulkOrderPage from './Components/Bulkorder';
 import StoreList from './Components/StoreList';
 import Checkout from './Components/Checkout';
 import LoginSignup from './Components/Login';
+import CardDetails from './Components/CardDetails';
 
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/store" element={<StoreList />} />
         <Route path="/checkout" element={<Checkout />} /> {/* Corrected route for Checkout */}
         <Route path='/login' element={<LoginSignup/>}/>
+        <Route path='/cart' element={<CardDetails/>}/>
       </Routes>
     </Router>
   );

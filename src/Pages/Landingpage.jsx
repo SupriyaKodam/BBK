@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import Navbar from '../Components/Navbar';
 import Hero from '../Components/Hero';
 import Offers from '../Components/Offers';
-import Categories from '../Components/Categories';
 import Navbardown from '../Components/Navbardown';
 import FoodItems from '../Components/FoodItems';
 import BiryaniGrid from '../Components/BiryaniGrid';
@@ -48,7 +47,6 @@ const Landingpage = () => {
       <Navbardown />
       <Hero />
       <Offers />
-      <Categories />
       <FoodItems />
       <div ref={biryaniGridRef}>
         <BiryaniGrid />

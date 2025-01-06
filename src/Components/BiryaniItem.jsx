@@ -1,10 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { addToCart } from '../features/cartSlice';
+import { useDispatch } from "react-redux";
 
 const BiryaniItem = ({ item }) => {
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
+    dispatch(addToCart(item));
     navigate("/go", { state: item }); // Navigate to the details page with the item data
   };
 

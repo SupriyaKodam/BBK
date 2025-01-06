@@ -1,80 +1,90 @@
-
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
+import { addToCart } from '../features/cartSlice';
+import { useDispatch } from "react-redux";
+
 const dessertData = [
   {
-    id: 1,
+    id: 27,
     name: "Chocolate Brownie",
     originalPrice: "₹150",
-    discountedPrice: "₹120",
+    price: "120",
     description: "Rich and fudgy chocolate brownie.",
     orders: "412 People ordered last week",
     badge: "Popular",
     badgeColor: "bg-blue-500",
-    imageUrl: "./Images/m.JPEG",
+    imgUrl: "./Images/m.JPEG",
+    qnty:1
   },
   {
-    id: 2,
+    id: 28,
     name: "Gulab Jamun",
     originalPrice: "₹90",
-    discountedPrice: "₹70",
+    price: "70",
     description: "Soft and juicy traditional Indian dessert.",
     orders: "538 People ordered last week",
     badge: "Bestseller",
     badgeColor: "bg-green-500",
-    imageUrl: "./Images/w.JPEG",
+    imgUrl: "./Images/w.JPEG",
+    qnty:1
   },
   {
-    id: 3,
+    id: 29,
     name: "Cheesecake",
     originalPrice: "₹250",
-    discountedPrice: "₹220",
+    price: "220",
     description: "Creamy cheesecake with a buttery crust.",
     orders: "276 People ordered last week",
     badge: "Limited Edition",
     badgeColor: "bg-yellow-500",
-    imageUrl: "./Images/x.JPEG",
+    imgUrl: "./Images/x.JPEG",
+    qnty:1
   },
   {
-    id: 4,
+    id: 30,
     name: "Rasmalai",
     originalPrice: "₹120",
-    discountedPrice: "₹100",
+    price: "100",
     description: "Soft cottage cheese balls in sweetened milk.",
     orders: "314 People ordered last week",
     badge: "Popular",
     badgeColor: "bg-blue-500",
-    imageUrl: "./Images/z.JPEG",
+    imgUrl: "./Images/z.JPEG",
+    qnty:1
   },
   {
-    id: 5,
+    id: 31,
     name: "Tiramisu",
-    originalPrice: "₹300",
+    price: "300",
     discountedPrice: "₹270",
     description: "Classic Italian coffee-flavored dessert.",
     orders: "198 People ordered last week",
     badge: "Limited Offer",
     badgeColor: "bg-red-500",
-    imageUrl:"./Images/k.JPEG",
+    imgUrl:"./Images/k.JPEG",
+    qnty:1
   },
   {
-    id: 6,
+    id: 32,
     name: "Ice Cream Sundae",
     originalPrice: "₹180",
-    discountedPrice: "₹150",
+    price: "150",
     description: "Delicious ice cream topped with syrup and nuts.",
     orders: "489 People ordered last week",
     badge: "Popular",
     badgeColor: "bg-blue-500",
-    imageUrl:"./Images/m.JPEG",
+    imgUrl:"./Images/m.JPEG",
+    qnty:1
   },
 ];
 
 
 const Desserts = () => {
+   const dispatch = useDispatch();
   const navigate = useNavigate(); // Initialize useNavigate for navigation
 
   const handleAddToCart = (item) => {
+    dispatch(addToCart(item));
     navigate("/details", { state: item }); // Navigate to details page with the dessert data as state
   };
 
@@ -95,7 +105,7 @@ const Desserts = () => {
               )}
               {/* Image */}
               <img
-                src={item.imageUrl}
+                src={item.imgUrl}
                 alt={item.name}
                 className="h-60 w-full object-cover"
               />
@@ -103,7 +113,7 @@ const Desserts = () => {
               <div className="p-4">
                 <h3 className="text-lg font-bold">{item.name}</h3>
                 <p className="text-gray-500 line-through">{item.originalPrice}</p>
-                <p className="text-xl font-semibold text-yellow-600">{item.discountedPrice}</p>
+                <p className="text-xl font-semibold text-yellow-600">{item.price}</p>
                 <p className="text-gray-700 my-2">{item.description}</p>
                 <p className="text-sm text-gray-500">{item.orders}</p>
                 {/* MUI Icon */}
