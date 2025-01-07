@@ -13,6 +13,9 @@ import {useNavigate} from 'react-router-dom'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import ChatIcon from '@mui/icons-material/Chat';
+
+
 
 const Navbar = () => {
   const carts = useSelector((state) => state.allCart.carts); // Get the carts from Redux
@@ -77,6 +80,10 @@ useEffect(() => {
           </button> */}
           {/* <ShoppingCartIcon style={{fontSize:40}}/> */}
           <button className='flex items-center space-x-2 text-gray-700' onClick={()=>navigate('/login')}>Login/Signup</button>
+          <button className="flex items-center space-x-1 text-gray-700 hover:text-blue-600">
+            <ChatIcon className="text-xl" />
+            <span className='text-xl font-semibold' onClick={()=>navigate('/chatbot')}>Chatbot</span>
+          </button>
         </div>
       )}
 
@@ -111,6 +118,10 @@ useEffect(() => {
           <button className="flex items-center space-x-1 text-gray-700 hover:text-blue-600">
             <RestaurantMenuIcon className="text-xl" />
             <span className='text-xl font-semibold' onClick={()=>navigate('/menu')}>Menu</span>
+          </button>
+          <button className="flex items-center space-x-1 text-gray-700 hover:text-blue-600">
+            <ChatIcon className="text-xl" />
+            <span className='text-xl font-semibold' onClick={()=>navigate('/chatbot')}>Chatbot</span>
           </button>
           {/* <button className="flex items-center space-x-1 text-gray-700 hover:text-blue-600">
             <DinnerDiningIcon className="text-xl" />

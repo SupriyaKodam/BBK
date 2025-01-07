@@ -12,6 +12,7 @@ import StoreList from './Components/StoreList';
 import Checkout from './Components/Checkout';
 import LoginSignup from './Components/Login';
 import CardDetails from './Components/CardDetails';
+import ChatBot from './Components/ChatBot';
 
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/checkout" element={<Checkout />} /> {/* Corrected route for Checkout */}
         <Route path='/login' element={<LoginSignup/>}/>
         <Route path='/cart' element={<CardDetails/>}/>
+        <Route path='/chatbot' element={<ChatBot/>}/>
       </Routes>
     </Router>
   );
